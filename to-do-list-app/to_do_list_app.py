@@ -1,8 +1,12 @@
 # 09/21/2025
+import os
+
 tasks = []
 
 print("Welcome!")
 while True:
+    os.system('cls' if os.name == 'nt' else 'clear')
+
     menu = input("To-do List Menu: \n1. Add task \n2. Remove task \n3. View tasks \n4. Quit \nChoose: ")
 
     if menu == "1":
@@ -33,3 +37,5 @@ while True:
     
     else:
         print("Invalid option!")
+    
+    input("\nPress Enter to continue...")
