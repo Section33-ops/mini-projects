@@ -8,19 +8,28 @@ while True:
     if menu == "1":
         add_task = input("Add task: ")
         tasks.append(add_task)
-        pass
+        
 
     elif menu == "2":
         remove_task = input("Remove task: ")
-        tasks.remove(remove_task)
-        pass
+        if remove_task in tasks:
+            tasks.remove(remove_task)
+            print(f"Removed: {remove_task}")
+        else:
+            print("Task not found!")
+        
     elif menu == "3":
-        for task in tasks:
-            print(f"- {task}")
-        pass
+        if tasks:
+            print("Your tasks: ")
+            for task in tasks:
+                print(f"- {task}")
+        else:
+            print("No tasks yet!")
+        
     elif menu == "4":
-        quit()
-        pass
+        print("Goodbye!")
+        break
+        
     
     else:
         print("Invalid option!")
