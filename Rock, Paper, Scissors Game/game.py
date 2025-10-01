@@ -18,6 +18,7 @@ while play == "y":
         print(f"You lose! I chose {computer_choice}")
     elif computer_choice == usr_choice:
         print(f"Again! I chose {computer_choice}")
+        continue
     else:
         print(f"You win! I chose {computer_choice}")
     if computer_choice != usr_choice:
