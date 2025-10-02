@@ -14,4 +14,4 @@ for question in questions:
         score += 1
     else:
         print("Wrong!")
-print(f"Your score is {score}")
+print(f"Your score is {score}/{len(questions)}")
