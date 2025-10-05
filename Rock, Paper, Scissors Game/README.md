@@ -17,9 +17,12 @@ The game compares both the user's choice and the computer's choice and shows who
 4. Type your choice(rock, paper, or scissors) and press Enter
 5. The game tells you if you won, lost, or tied
 
+## Winning Rules 
+- Rock: breaks Scissors.
+- Scissors: cuts Paper.
+- Paper: covers Rock.
+
 ## Possible Future Updates
 - Input validation
 - Keep score for multiple rounds
-- Add
-- Update scoring system
-- Save scores to a file
+- Add replay option with better logic 1  
