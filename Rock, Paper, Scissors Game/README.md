@@ -25,4 +25,4 @@ The game compares both the user's choice and the computer's choice and shows who
 ## Possible Future Updates
 - Input validation
 - Keep score for multiple rounds
-- Add replay option with better logic 1  
+- Add replay option with better logic
