@@ -4,6 +4,10 @@ from questions import questions
 
 score = 0
 
+player_name = input("Enter a user name to start playing: ")
+
+welcome = input(f"Welcome {player_name}\nPress Enter to start ...\n")
+
 for question in questions:
     print(question["question"])
     for choice in question["choices"]:
