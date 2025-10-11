@@ -2,6 +2,7 @@
 
 from questions import questions
 import csv
+import os
 
 score = 0
 
@@ -21,15 +22,12 @@ for question in questions:
         print("Wrong!")
 print(f"Your score is {score}/{len(questions)}")
 
+if not os.path.exists("scores.csv"):
+        with open("scores.csv", "w", newline="") as scores_file:
+            writer = csv.writer(scores_file)
+            writer.writerow(["Player name", "Score"])
+
 # Write score to csv file
 with open("scores.csv", "a") as scores_file:
     writer = csv.writer(scores_file)
-    writer.writerow(["Player name", "Score"])
     writer.writerow([player_name, score])
-
-# Read scores from csv file
-with open("scores.csv", "r") as scores_file:
-    reader = csv.reader(scores_file)
-    next(reader)
-    for row in reader:
-        print(f"{player_name}'s score: ")
