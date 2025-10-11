@@ -6,6 +6,7 @@ import os
 
 score = 0
 def play_quiz():
+    global score
     print("Function has started")
     player_name = input("Enter a user name to start playing: ")
 
