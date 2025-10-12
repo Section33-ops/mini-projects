@@ -7,7 +7,7 @@ import os
 score = 0
 def play_quiz():
     global score
-    
+
     player_name = input("Enter a user name to start playing: ")
     welcome = input(f"Welcome {player_name}\nPress Enter to start ...\n")
 
@@ -16,23 +16,21 @@ def play_quiz():
         for choice in question["choices"]:
             print(choice)
 
-        user_answer = input("Your answer: ").upper()
-        if user_answer in ["A", "B", "C", "D"]:
-            if user_answer == question["answer"]:
-                print("Correct!")
-                score += 1
-            else:
-                print("Wrong!")
-        else:
-            print("Invalid option. Please enter A, B, C, or D.")
-            print(question["question"])
-            for choice in question["choices"]:
-                print(choice)
+        while True:
             user_answer = input("Your answer: ").upper()
+            if user_answer in ["A", "B", "C", "D"]:
+                break
+            else:
+                print("Invalid option. Please enter A, B, C, or D.")
+
+        if user_answer == question["answer"]:
+            print("Correct!")
+            score += 1
+        else:
+            print("Wrong!")
         
     print(f"Your score is {score}/{len(questions)}")
 
-"""
     if not os.path.exists("scores.csv"):
             with open("scores.csv", "w", newline="") as scores_file:
                 writer = csv.writer(scores_file)
@@ -41,8 +39,8 @@ def play_quiz():
     # Write score to csv file
     with open("scores.csv", "a") as scores_file:
         writer = csv.writer(scores_file)
-        writer.writerow([player_name, score
-"""
+        writer.writerow([player_name, score])
+
 
 if __name__ == "__main__":
     play_quiz()
