@@ -25,7 +25,7 @@ questions = [
 
     {
         "question": "In what year was the structure of the DNA discovered?",
-        "choices": ["A. 1945", "B. 1953", "D. 1961", "D. 1970"],
+        "choices": ["A. 1945", "B. 1953", "C. 1961", "D. 1970"],
         "answer": "B",
     }
 ]
