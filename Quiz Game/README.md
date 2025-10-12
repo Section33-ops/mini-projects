@@ -3,7 +3,8 @@
 ## Game Description
 This is my first multiple-choice quiz game in Python.  
 The game asks the player questions and they type the letter of the answer (A, B, C, or D).  
-It tells if the answer is correct and gives a final score at the end.  
+It tells if the answer is correct and gives a final score at the end. 
+The score is saved to 'scores.csv' 
 
 ---
 
@@ -22,4 +23,4 @@ It tells if the answer is correct and gives a final score at the end.
 - Feedback
 - Question shuffling
 - Update scoring system
-- Save scores to a file
+- ~~Save scores to a file~~
