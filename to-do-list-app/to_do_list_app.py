@@ -18,8 +18,13 @@ def load_tasks():
             return [row[0] for row in reader]  # Return tasks as a list of strings
     return []  # Return empty list if no tasks exist yet
 
-def delete_tasks():
-    pass
+def delete_tasks(delete_task):
+    if delete_task in tasks:
+        tasks.remove(delete_task)
+        print(f"Removed: {delete_task}")
+        save_tasks(tasks)
+    else:
+        print("Task not found!")
 
 print("Welcome!")
 
@@ -37,11 +42,7 @@ while True:
         
     elif menu == "2":
         remove_task = input("Remove task: ")
-        if remove_task in tasks:
-            tasks.remove(remove_task)
-            print(f"Removed: {remove_task}")
-        else:
-            print("Task not found!")
+        delete_tasks(remove_task)
         
     elif menu == "3":
         if tasks:
