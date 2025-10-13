@@ -21,6 +21,7 @@ I made it to practice what I learnt using lists, loops, and user input.
 - Remove tasks
 
 ## Possible Future Updates
-- Save tasks to a file so they don't disappear when the user closes the app.
+- ~~Save tasks to a file so they don't disappear when the user closes the app.~~
+- Remove tasks saved to a file.
 - Add due dates and priorities.
 - Add task editing feature
