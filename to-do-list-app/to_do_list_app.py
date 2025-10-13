@@ -4,10 +4,10 @@ import csv
 
 tasks = []
 
-def save_tasks(task):
-    with open("tasks.csv", "a", newline="")as tasks_file:
+def save_tasks(task):   # Function to save tasks to tasks.csv
+    with open("tasks.csv", "a", newline="")as tasks_file:   # Open file for appending
         writer = csv.writer(tasks_file)
-        writer.writerow(task)
+        writer.writerow([task])
     pass
 
 def delete_tasks():
@@ -24,7 +24,6 @@ while True:
         tasks.append(add_task)
         save_tasks(add_task)
         
-
     elif menu == "2":
         remove_task = input("Remove task: ")
         if remove_task in tasks:
