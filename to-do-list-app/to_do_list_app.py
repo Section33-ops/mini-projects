@@ -10,6 +10,9 @@ def save_tasks(task):   # Function to save tasks to tasks.csv
         writer.writerow([task])
     pass
 
+def load_tasks():
+    pass
+
 def delete_tasks():
     pass
 
