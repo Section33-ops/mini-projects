@@ -11,12 +11,20 @@ def save_tasks(task):   # Function to save tasks to tasks.csv
     pass
 
 def load_tasks():
-    pass
+    # Load tasks from tasks.csv only when the program starts or when the user requests to view tasks.
+    if os.path.exists("tasks.csv"):  # Check if the file exists first
+        with open("tasks.csv", "r", newline="") as tasks_file:
+            reader = csv.reader(tasks_file)
+            return [row[0] for row in reader]  # Return tasks as a list of strings
+    return []  # Return empty list if no tasks exist yet
 
 def delete_tasks():
     pass
 
 print("Welcome!")
+
+tasks = load_tasks()
+
 while True:
     os.system('cls' if os.name == 'nt' else 'clear')
 
