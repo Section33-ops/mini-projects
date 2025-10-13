@@ -1,7 +1,17 @@
 # 09/21/2025
 import os
+import csv
 
 tasks = []
+
+def save_tasks(task):
+    with open("tasks.csv", "a", newline="")as tasks_file:
+        writer = csv.writer(tasks_file)
+        writer.writerow(task)
+    pass
+
+def delete_tasks():
+    pass
 
 print("Welcome!")
 while True:
@@ -12,6 +22,7 @@ while True:
     if menu == "1":
         add_task = input("Add task: ")
         tasks.append(add_task)
+        save_tasks(add_task)
         
 
     elif menu == "2":
