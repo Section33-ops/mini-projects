@@ -5,7 +5,7 @@ import csv
 tasks = []
 
 def save_tasks(task):   # Function to save tasks to tasks.csv
-    with open("tasks.csv", "a", newline="")as tasks_file:   # Open file for appending
+    with open("tasks.csv", "w", newline="")as tasks_file:   # Open file for appending
         writer = csv.writer(tasks_file)
         writer.writerow([task])
     pass
