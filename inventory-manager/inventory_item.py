@@ -1,27 +1,27 @@
-class InventoryItem:
-    def __init__(self, name, price, quantity):
-        self.name = name
-        self.price = price
-        self.quantity = quantity
+class InventoryItem:    # Define class that represents an item in inventory
+    def __init__(self, name, price, quantity):  # Initialize the item with name, price and quantity
+        self.name = name    # Set item name
+        self.price = price  # Set item price
+        self.quantity = quantity    # Set item quantity
     
-    def display_item(self):
-        return self.name
+    def display_item(self): # Function to return name of item
+        return self.name    # Return the name of the item
     
-    def update_price(self):
-        new_price = float(input("Enter new price: "))
-        if new_price > 0:
-            self.price = new_price
-            return self.price   
-        else:   
-            print("Invalid")    
+    def update_price(self): # Function to update the price of the item
+        new_price = float(input("Enter new price: "))   # User inputs new price
+        if new_price > 0:   # Checks that the new price greater than zero
+            self.price = new_price  # Update self.price with new_price
+            return self.price   # Return the new price of the item
+        else:   # If new price is negative
+            print("Invalid")   # Prints Invalid 
 
-    def update_quantity(self):
-        new_quantity = int(input("How many items do you want to add or remove: "))
-        print(f"Updated quantity: {new_quantity}")
-        new_quantity = new_quantity + self.quantity
+    def update_quantity(self):  # Function to update the quantity of item
+        new_quantity = int(input("How many items do you want to add or remove: "))  # User inputs new quantity
+        print(f"Updated quantity: {new_quantity}")  # Prints the number of items to add or remove based on user input
+        new_quantity = new_quantity + self.quantity # Add or subtract user’s input to current quantity to get new quantity
 
-        if new_quantity >= 0:
-            self.quantity = new_quantity
-            return self.quantity
-        else:
-            return "Quantity cannot be negative"
+        if new_quantity >= 0:   # Check that the new quantity is not negative
+            self.quantity = new_quantity    # Sets self.quantity to new_quantity
+            return self.quantity    # Return the new quantity of item
+        else:   # If quantity is negative
+            return "Quantity cannot be negative"    # Returns message "Quantity cannot be negative"
