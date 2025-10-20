@@ -13,9 +13,3 @@ class InventoryManager: # Define class that manages items in inventory
     def display_items(self):    # Function to display items
         for item in self.items: # Loop through each item in the item list
             print(item) # Print item
-
-
-manager = InventoryManager()
-manager.add_item()
-manager.add_item()
-manager.display_items()
