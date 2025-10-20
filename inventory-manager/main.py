@@ -19,7 +19,10 @@ def menu():
         exit_option()
 
 def add_item_option():
-    my_manager.add_item()
+    item_name = input("What is the name of the item? ")
+    item_price = input("What is the price of the item? ")
+    item_quantity = input("What is the quantity of the item? ")
+    inventory_item.add_item(item_name, item_price, item_quantity)
 
 def display_items_option():
     my_manager.display_items()
