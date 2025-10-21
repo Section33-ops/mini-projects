@@ -1,45 +1,35 @@
 # 10/18/2025
 
-import inventory_item, inventory_manager
+import inventory_item, inventory_manager    # Import the InventoryItem and InventoryManager modules
 
-my_manager = inventory_manager.InventoryManager()
-
-
-def menu():
-    print("1. Add item \n2. Display items \n3. Update item \n4. Exit")
-    option = input("Choose an option(1,2,3,4): ")
-
-    if option == "1":
-        add_item_option()
-    elif option == "2":
-        display_items_option()
-    elif option == "3":
-        update_item_option()
-    elif option == "4":
-        exit_option()
-
-def add_item_option():
-    item_name = input("What is the name of the item? ")
-    item_price = input("What is the price of the item? ")
-    item_quantity = input("What is the quantity of the item? ")
-    inventory_item.add_item(item_name, item_price, item_quantity)
-
-def display_items_option():
-    my_manager.display_items()
-
-def update_item_option():
-    print("What do you want to update? \n1. Update price\n 2. Update quantity")
-    update_option = input("Choose 1 or 2")
-    if update_option == "1":
-        my_manager.update_price
-    elif update_option == "2":
-        my_manager.update_quantity
-    else:
-        print("Invalid option")
-
-def exit_option():
-    exit()
+my_manager = inventory_manager.InventoryManager()   # Create an instance of InventoryManager to manage items
 
 
-while True:
-    menu()
+def menu(): # Function that displays the main menu to the user
+    print("1. Add item \n2. Display items \n3. Update item \n4. Exit")  # Print menu options
+    option = input("Choose an option(1,2,3,4): ")   # Ask the user to select an option
+
+    if option == "1":  # If the user chooses 1
+        add_item_option()   # Call the function to add an item
+    elif option == "2": # # If the user chooses 2
+        display_items_option()  # Call the function to display all items
+    elif option == "3": # If the user chooses option 2
+        update_item_option()    # Call the function to update an item (currently a placeholder)
+    elif option == "4": # If the user chooses option 2
+        exit_option()   # Call the function to exit the program
+
+def add_item_option(): # Function to add a new item
+    my_manager.add_item()   # Calls the add_item() method from InventoryManager to handle input and storage
+
+def display_items_option(): # Function to display all items in the inventory
+    my_manager.display_items()  # Calls rhe dispaly_items() method from InventoryManager to print each item
+
+def update_item_option():   # Function to update an existing item's price or quantity
+    print("Feature comming soon")   # Placeholder message until update functionality is implemented
+
+def exit_option():  # Function to exit the program
+    exit()  # Terminates the program
+
+
+while True: # Infinite loop to keep showing the menu until the user chooses to exit
+    menu()  # Calls the menu function on each iteration
