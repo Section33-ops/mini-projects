@@ -1,3 +1,5 @@
+import inventory_item
+
 class InventoryManager: # Define class that manages items in inventory
     def __init__(self,  items=None): # Initialize with a list of items
         if items is None:   # If there is no item list
@@ -6,10 +8,16 @@ class InventoryManager: # Define class that manages items in inventory
             self.items = items  # Use existing list
 
     def add_item(self): # Function to add item to item list
-        item = input("What item do you want to add? ")  #   Ask user for item to add to list
-        self.items.append(item) # Append item to item list
-        print(f"{item} added successfully") # Priny item added successfully
+        item_name = input("What is the name of the item? ") # Ask user for item name
+        item_price = float(input("What is the price of the item? "))   # Ask user for item price
+        item_quantity = int(input("What is the quantity of the item? ")) # Ask user for item quantity
+        item = inventory_item.InventoryItem(item_name, item_price, item_quantity)   # Create an inventory item with name, price and quantity
+        self.items.append(item) # Append the item to the items list
+        print(f"{item.name} added successfully!")    # Prints item was added successfully
     
     def display_items(self):    # Function to display items
-        for item in self.items: # Loop through each item in the item list
-            print(item) # Print item
+        if not self.items:  # If item list is empty
+            print("No items in inventory yet.") # Prints No items in inventory yet.
+        else:   # Else
+            for item in self.items: # Loop through each item in the item list
+                print(item) # Print item
