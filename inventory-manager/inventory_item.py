@@ -4,9 +4,6 @@ class InventoryItem:    # Define class that represents an item in inventory
         self.price = price  # Set item price
         self.quantity = quantity    # Set item quantity
     
-    def display_item(self): # Function to return name of item
-        return self.name    # Return the name of the item
-    
     def update_price(self): # Function to update the price of the item
         new_price = float(input("Enter new price: "))   # User inputs new price
         if new_price > 0:   # Checks that the new price greater than zero
@@ -25,3 +22,7 @@ class InventoryItem:    # Define class that represents an item in inventory
             return self.quantity    # Return the new quantity of item
         else:   # If quantity is negative
             return "Quantity cannot be negative"    # Returns message "Quantity cannot be negative"
+    
+    # Function to display all info about item
+    def __str__(self):
+        return f"Item: {self.name}, Price: ${self.price}, Quantity: {self.quantity}"
