@@ -13,9 +13,9 @@ def menu(): # Function that displays the main menu to the user
         add_item_option()   # Call the function to add an item
     elif option == "2": # # If the user chooses 2
         display_items_option()  # Call the function to display all items
-    elif option == "3": # If the user chooses option 2
+    elif option == "3": # If the user chooses option 3
         update_item_option()    # Call the function to update an item (currently a placeholder)
-    elif option == "4": # If the user chooses option 2
+    elif option == "4": # If the user chooses option 4
         exit_option()   # Call the function to exit the program
 
 def add_item_option(): # Function to add a new item
