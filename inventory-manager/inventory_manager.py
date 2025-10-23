@@ -21,3 +21,9 @@ class InventoryManager: # Define class that manages items in inventory
         else:   # Else
             for item in self.items: # Loop through each item in the item list
                 print(item) # Print item
+    
+    def find_item(self, item_name): # Function to find an item in the inventory by name
+        for item in self.items:  # Loop through each InventoryItem in the list
+            if item.name.lower() == item_name.lower():  # Compare names
+                return item  # Return the found item object
+        return None  # If not found, return None
