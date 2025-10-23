@@ -22,10 +22,23 @@ def add_item_option(): # Function to add a new item
     my_manager.add_item()   # Calls the add_item() method from InventoryManager to handle input and storage
 
 def display_items_option(): # Function to display all items in the inventory
-    my_manager.display_items()  # Calls rhe dispaly_items() method from InventoryManager to print each item
+    my_manager.display_items()  # Calls the dispaly_items() method from InventoryManager to print each item
 
 def update_item_option():   # Function to update an existing item's price or quantity
-    print("Feature comming soon")   # Placeholder message until update functionality is implemented
+    my_manager.display_items()
+    item_to_update = input("What item do you want to update? ")
+    if item_to_update in my_manager.items:
+        print("1. Price \n2. Quantity")
+        update_option = input("Choose one to update: ")
+        if update_option == "1":
+            inventory_item.InventoryItem.update_price(item_to_update)
+        elif update_option == "2":
+            inventory_item.InventoryItem.update_quantity(item_to_update)
+        else:
+            print("Invalid option")
+        
+    else:
+        print("Item not found")
 
 def exit_option():  # Function to exit the program
     exit()  # Terminates the program
