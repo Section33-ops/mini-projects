@@ -25,20 +25,18 @@ def display_items_option(): # Function to display all items in the inventory
     my_manager.display_items()  # Calls the dispaly_items() method from InventoryManager to print each item
 
 def update_item_option():   # Function to update an existing item's price or quantity
-    my_manager.display_items()
-    item_to_update = input("What item do you want to update? ")
-    if item_to_update in my_manager.items:
-        print("1. Price \n2. Quantity")
-        update_option = input("Choose one to update: ")
-        if update_option == "1":
-            inventory_item.InventoryItem.update_price(item_to_update)
-        elif update_option == "2":
-            inventory_item.InventoryItem.update_quantity(item_to_update)
-        else:
-            print("Invalid option")
-        
-    else:
-        print("Item not found")
+    my_manager.display_items()  # Displays items in inventory
+    item_to_update = input("What item do you want to update? ") # User enters item to be updated
+    item = my_manager.find_item(item_to_update) # Checks if item is in inventory
+    if item:    # If item is inventory
+        print("1. Price \n2. Quantity") # Print update options
+        update_option = input("Choose one you want to update: ")    # Ask user for update option
+        if update_option == "1":    # If update option is 1
+             item.update_price()    # Calls item update_price() method
+        elif update_option == "2":  # If update option is 2
+            item.update_quantity()  # Calls item update_quantity() method
+    else:   # If item is not found
+        print("Item not found!")    # Print item not found
 
 def exit_option():  # Function to exit the program
     exit()  # Terminates the program
