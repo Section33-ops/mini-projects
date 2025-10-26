@@ -1,11 +1,19 @@
 # 10/18/2025
 
 import inventory_item, inventory_manager    # Import the InventoryItem and InventoryManager modules
+import json
 
 my_manager = inventory_manager.InventoryManager()   # Create an instance of InventoryManager to manage items
 
 
 def menu(): # Function that displays the main menu to the user
+    with open("items.json", "r") as file:
+       loaded_items = json.load(file)
+       for item_data in loaded_items:
+        item = InventoryItem(item_data["name"], item_data["price"], item_data["quantity"])
+        my_manager.items.append(item)
+
+
     print("1. Add item \n2. Display items \n3. Update item \n4. Exit")  # Print menu options
     option = input("Choose an option(1,2,3,4): ")   # Ask the user to select an option
 
@@ -39,6 +47,15 @@ def update_item_option():   # Function to update an existing item's price or qua
         print("Item not found!")    # Print item not found
 
 def exit_option():  # Function to exit the program
+    with open("items.json", "w") as file:
+        data_to_save = []
+        for item in my_manager.items:
+            data_to_save.append({
+                "name": item.name,
+                "price": item.price,
+                "quantity": item.quantity
+            })
+        json.dump(data_to_save, file)
     exit()  # Terminates the program
 
 
