@@ -1,9 +1,10 @@
 # 10/18/2025
 
-import inventory_item, inventory_manager    # Import the InventoryItem and InventoryManager modules
+from inventory_item import InventoryItem
+from inventory_manager import InventoryManager
 import json
 
-my_manager = inventory_manager.InventoryManager()   # Create an instance of InventoryManager to manage items
+my_manager = InventoryManager()   # Create an instance of InventoryManager to manage items
 
 
 def menu(): # Function that displays the main menu to the user
