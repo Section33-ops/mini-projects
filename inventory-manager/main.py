@@ -8,13 +8,6 @@ my_manager = InventoryManager()   # Create an instance of InventoryManager to ma
 
 
 def menu(): # Function that displays the main menu to the user
-    with open("items.json", "r") as file:
-       loaded_items = json.load(file)
-       for item_data in loaded_items:
-        item = InventoryItem(item_data["name"], item_data["price"], item_data["quantity"])
-        my_manager.items.append(item)
-
-
     print("1. Add item \n2. Display items \n3. Update item \n4. Exit")  # Print menu options
     option = input("Choose an option(1,2,3,4): ")   # Ask the user to select an option
 
@@ -59,6 +52,16 @@ def exit_option():  # Function to exit the program
         json.dump(data_to_save, file)
     exit()  # Terminates the program
 
+
+# Load items ONCE when the program starts
+try:
+    with open("items.json", "r") as file:
+        loaded_items = json.load(file)
+        for item_data in loaded_items:
+            item = InventoryItem(item_data["name"], item_data["price"], item_data["quantity"])
+            my_manager.items.append(item)
+except (FileNotFoundError, json.JSONDecodeError):
+    my_manager.items = []
 
 while True: # Infinite loop to keep showing the menu until the user chooses to exit
     menu()  # Calls the menu function on each iteration
