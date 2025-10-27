@@ -19,9 +19,10 @@ I made it to practice Object-Oriented Programming (OOP) concepts like classes, o
 - Add new items with name, price, and quantity.
 - View all items currently in the inventory.
 - Update the price or quantity of existing items.
+- Now saves and loads items from a JSON file.
 
 ## Possible Future Updates
 - Remove items from the inventory.
-- Save and load data from a file.
+- ~~Save and load data from a file.~~
 - Add categories or sorting options.
 - Build a simple graphical version of the app.
