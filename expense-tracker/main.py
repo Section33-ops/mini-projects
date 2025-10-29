@@ -6,13 +6,13 @@ def add_expense_option():
     item = input("What did you buy? ")
     item_price = float(input("How much did it cost? "))
     item_quantity = int(input("How many did you buy? "))
-    total_cost = round(item_price * item_quantity, 2)
+    total_cost = item_price * item_quantity
     item_expense = (item, item_price, item_quantity, total_cost)
     expenses.append(item_expense)
 
 def view_expenses_option():
     for expense in expenses:
-        print(f"Item: {expense[0]}, Price: {expense[1]}, Quantity: {expense[2]}, Total cost: {expense[3]}")
+        print(f"Item: {expense[0]}, Price: {expense[1]}, Quantity: {expense[2]}, Total cost: {expense[3]:.2f}")
 
 def view_total_option():
     total = 0
@@ -22,7 +22,7 @@ def view_total_option():
     else:
         for expense in expenses:
             total += expense[3]
-    print(f"Total spent so far is ${total}")
+    print(f"Total spent so far is ${total:.2f}")
     
 
 def menu():
